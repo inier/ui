@@ -1,0 +1,9 @@
+node_modules
+/.svn
+/.idea
+/ios/
+/android/
+tests
+lib
+*.log
+.cache
