@@ -1,7 +1,5 @@
 # lerna入门
 
-
-
 [TOC]
 
 ## 多package管理面临的问题
@@ -10,7 +8,7 @@
 
 举个例子，如果要维护module-1,module-2两个package，其依赖关系如下：
 
-```
+```json
 //module-a/package.json
 {
     "name": "module-a",
@@ -26,7 +24,7 @@
 }
 ```
 
-```
+```json
 // module-b/package.json
 {
     "name": "module-b",
@@ -123,7 +121,7 @@ lerna有两种工作模式，Independent mode和Fixed/Locked mode，在这里介
 
 在项目根目录的`lerna.json`中设置lerna的相关配置。
 
-```
+```json
 {
   "version": "1.0.0",
   "npmClient": "yarn",
@@ -159,7 +157,7 @@ lerna与yarn的[`workspace`](https://link.juejin.im/?target=https%3A%2F%2Fyarnpk
 
 1. `lerna.json`中lerna的设置
 
-   ```
+   ```json
    {
      ...
      "npmClient": "yarn",
@@ -172,7 +170,7 @@ lerna与yarn的[`workspace`](https://link.juejin.im/?target=https%3A%2F%2Fyarnpk
 
 2. 根目录下的`package.json`
 
-   ```
+   ```json
    {
      ...
      "private": true,
@@ -187,7 +185,7 @@ lerna与yarn的[`workspace`](https://link.juejin.im/?target=https%3A%2F%2Fyarnpk
 
 注意: 若开启了workspace功能，则lerna会将`package.json`中`workspaces`中所设置的项目路径作为`lerna packages`的路径，而不会使用`lerna.json`中的`packages`值。相关源码：
 
-```
+```js
 get packageConfigs() {
     if (this.config.useWorkspaces) {
       const workspaces = this.manifest.get("workspaces");
@@ -202,7 +200,7 @@ get packageConfigs() {
 
 以[vue-cli](https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2Fvuejs%2Fvue-cli)为例，它的`lerna.json`配置:
 
-```
+```json
 {
   "npmClient": "yarn",
   "useWorkspaces": false,
@@ -216,7 +214,7 @@ get packageConfigs() {
 
 根目录下的`package.json`:
 
-```
+```json
 {
   "private": true,
   "workspaces": [
@@ -244,7 +242,7 @@ get packageConfigs() {
 
 2. 将package的`name`设置成统一的`@repo/module`的格式，在这里就是`@monorepo/module-a`
 
-   ```
+   ```json
    {
      "name": "@yourrepo/module-a",
      "version": "1.0.0",
@@ -313,7 +311,7 @@ get packageConfigs() {
 
    比如，若每个package均有`test`script
 
-   ```
+   ```json
    "name": "@monorepo/module-a",
    "scripts": {
        "test": "jest"
@@ -332,7 +330,7 @@ get packageConfigs() {
 
    比如，在project-alpha的`package.json`中：
 
-   ```
+   ```json
    {
      "name": "project-alpha",
      "version": "1.0.0",
@@ -487,7 +485,7 @@ lerna publish
 
 2. 在根目录下正常设置相关配置文件
 
-   ```
+   ```json
    // .prettierrc
    {
        "singleQuote": true,
@@ -499,7 +497,7 @@ lerna publish
    }
    ```
 
-   ```
+   ```json
    // package.json
    {
        ...
@@ -522,7 +520,7 @@ lerna publish
    }
    ```
 
-   ```
+   ```js
    // lint-staged.config.js
    // https://github.com/okonet/lint-staged#configuration
    
@@ -590,7 +588,7 @@ Lerna集成commitlint ，参考 [lerna-conventional-commits-example](https://git
 yarn add --dev @commitlint/cli @commitlint/config-conventional husky
 ```
 
-```
+```json
 // package.json
 {
   "name": "lerna-demo",
