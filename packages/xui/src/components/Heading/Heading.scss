@@ -1,0 +1,37 @@
+@import '@settings';
+$headingPrefixCls: '#{$prefix}heading';
+.#{$headingPrefixCls} {
+    display: flex;
+    height: $heading-height;
+    font-size: $font-size-heading;
+    line-height: $heading-height;
+    color: $color-text-base;
+    background-color: $fill-base;
+    &-content,
+    &-extra {
+        flex: 1;
+    }
+    &-content {
+        display: flex;
+        text-align: left;
+        align-items: center;
+        .#{$headingPrefixCls}-center & {
+            justify-content: center;
+        }
+        .#{$headingPrefixCls}-end & {
+            justify-content: flex-end;
+        }
+    }
+    &-thumb {
+        max-width: $heading-thumb-size;
+        margin-right: $h-spacing-sm;
+        img {
+            width: 100%;
+        }
+    }
+    &-extra {
+        color: $color-text-caption;
+        text-align: right;
+    }
+    @include wingBlank();
+}

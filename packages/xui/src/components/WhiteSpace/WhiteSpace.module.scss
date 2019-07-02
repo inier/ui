@@ -1,0 +1,11 @@
+@import '@settings';
+
+.whiteSpace {
+    height: $h-spacing-lg;
+    @include min-screen(414px) {
+        height: $h-spacing-xl;
+    }
+    @include max-screen(320px) {
+        height: $h-spacing-md;
+    }
+}

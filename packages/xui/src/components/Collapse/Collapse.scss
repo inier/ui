@@ -1,0 +1,77 @@
+@import '@settings';
+$collapsePrefixCls: '#{$prefix}collapse';
+.#{$collapsePrefixCls} {
+    position: relative;
+    &:not(#{&}-full) {
+        @include wingBlank(margin);
+    }
+    &#{&}-full {
+    }
+    &#{&}-radius:not(#{&}-full) {
+        @include border-radius();
+    }
+    &#{&}-gutter {
+        > #{$collapsePrefixCls}-item:not(:first-child) {
+            margin-top: 10px;
+        }
+    }
+    &-anim-active {
+        transition: all .2s ease-out;
+    }
+    > #{&}-item {
+        > .#{$collapsePrefixCls}-header {
+            position: relative;
+            height: $collapse-head-height;
+            font-size: $font-size-heading;
+            line-height: $collapse-head-height;
+            color: $color-text-base;
+            background-color: $fill-base;
+            i.arrow {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: $icon-size-xs;
+                height: $icon-size-xs;
+                margin-top: -($icon-size-xs / 2);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: contain;
+                transition: transform .2s ease;
+                transform: rotate(90deg);
+                @include singleBlank(right, margin);
+                @include encoded-svg-bg(right);
+            }
+            &[aria-expanded~='true'] {
+                i {
+                    transform: rotate(270deg);
+                }
+            }
+            @include wingBlank();
+            @include hairline(bottom);
+            @include ellipsis;
+        }
+        > .#{$collapsePrefixCls}-content {
+            overflow: hidden;
+            background-color: $fill-base;
+            .#{$collapsePrefixCls}-content-box {
+                position: relative;
+                font-size: $font-size-subhead;
+                color: $color-text-paragraph;
+                .am-list-body {
+                    @include hairline-remove(top);
+                }
+                @include hairline(bottom);
+            }
+            &.#{$collapsePrefixCls}-content-inactive {
+                display: none;
+            }
+        }
+    }
+    > #{&}-item-disabled {
+        > .#{$collapsePrefixCls}-header {
+            color: $collapse-head-color-disabled;
+            cursor: not-allowed;
+            background-color: $collapse-head-bg-color-disabled;
+        }
+    }
+}
