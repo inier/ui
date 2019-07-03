@@ -2,6 +2,7 @@
 
 // Promise
 console.log(
+    'promise：',
     new Promise((resolve, reject) => {
         console.log('promise!');
     })
@@ -9,14 +10,12 @@ console.log(
 
 // async & await
 function sleep(time) {
-    console.log(time);
+    console.log('async & await:', time);
 }
 async function count() {
     let counter = 1;
-    for (let i = 0; i < 100; i++) {
-        counter += 1;
-        console.log(counter);
-        await sleep(1000);
+    for (let i = 0; i < 3; i++) {
+        await sleep(counter++);
     }
 }
 count();
@@ -30,32 +29,34 @@ class Test {
     }
 
     log() {
-        console.log(this.val);
+        console.log('Decorators:', this.val);
     }
 }
 Test.log(); // "abc"
 
 // Map
-console.log(new Map());
+console.log('Map:', new Map());
 
 // 乘方
 console.log('8的2次方：', 8 ** 2);
 
 // 空格补齐
+console.log('空格补齐:');
 console.log('abc'.padStart(10));
 console.log(`${'abc'.padEnd(6)}def`);
 console.log('5'.padEnd(10, '=*')); // '5=*=*=*=*='
 console.log('5'.padStart(10, '=*')); // '=*=*=*=*=5'
 
 // Array.prototype.includes
-console.log('abc'.includes('a'));
+console.log('Array.prototype.includes:', 'abc'.includes('a'));
 
 // findIndex
-console.log(['babel1', 'babel'].findIndex((item) => item === 'babel'));
+console.log('findIndex:', ['babel1', 'babel'].findIndex((item) => item === 'babel'));
 
 const ttObj = { x: 1, y: 2, z: 3, d: 4 };
-// 对象的Rest&Spread
+// Object Rest&Spread
 const { x, y, ...z } = ttObj;
+console.log('Object Rest&Spread:');
 console.log(x); // 1
 console.log(z); // 输出{ z: 3, d: 4 }
 
@@ -66,8 +67,14 @@ const t = ttObj;
 const { x: aa, ...tt } = t;
 console.log(tt);
 
+const ts = {
+    delayRejection: true,
+    ...ttObj,
+};
+console.log(ts);
+
 // Object.assign
-console.log(Object.assign(ttObj, { c: `${t.x}-001` }));
+console.log('Object.assign:', Object.assign(ttObj, { c: `${t.x}-001` }));
 
 // Object.defineProperty
 Object.defineProperty(t, 'a', {
@@ -90,11 +97,11 @@ Object.getOwnPropertyDescriptors(ttObj, 'x');
 // Object.values
 Object.values(ttObj); // 输出[ 1, 2 ]
 for (const value of Object.values(ttObj)) {
-    console.log(value); // 1, 2
+    console.log('Object.values:', value); // 1, 2
 }
 
 // Object.entries
 Object.entries(ttObj); // 输出[ [ 'a', 1 ], [ 'b', 2 ] ]
 for (const [key, value] of Object.entries(ttObj)) {
-    console.log([key, value]); // ['a', 1], ['b', 2]
+    console.log('Object.entries:', [key, value]); // ['a', 1], ['b', 2]
 }
