@@ -25,7 +25,7 @@
     "shortid": "^2.2.13"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-decorators": "^7.2.3",    
+    "@babel/plugin-proposal-decorators": "^7.2.3",
     "@fpapado/docz-plugin-css": "^0.13.7",
     "@ozo/mixins-sass": "^1.1.7",
     "@primer/css": "^12.2.1",
@@ -48,7 +48,7 @@
     "express-useragent": "^1.0.12",
     "fs": "^0.0.1-security",
     "hash-sum": "^1.0.2",
-    "http-proxy-middleware": "^0.19.0",    
+    "http-proxy-middleware": "^0.19.0",
     "lodash-webpack-plugin": "^0.11.5",
     "node-sass": "^4.11.0",
     "onchange": "^5.0.2",
@@ -75,13 +75,13 @@
     "webpack-simple-progress-plugin": "^0.0.4"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   },
   "scripts": {
     "start": "env-cmd development react-app-rewired start",
     "build": "env-cmd production react-app-rewired build",
-    "test": "env-cmd test react-app-rewired test",    
+    "test": "env-cmd test react-app-rewired test",
     "eject": "react-scripts eject",
     "jslint": "./node_modules/react-scripts/node_modules/.bin/eslint src/**/*.{js,jsx,ts,tsx} --format table",
     "jslint:fix": "./node_modules/react-scripts/node_modules/.bin/eslint src/**/*.{js,jsx,ts,tsx} --fix",
