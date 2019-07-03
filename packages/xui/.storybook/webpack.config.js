@@ -7,10 +7,21 @@ module.exports = ({ config }) => {
         test: /\.(j|t)sx?$/,
         use: [
             {
-                loader: require.resolve('babel-loader'),
-                exclude: path.join(__dirname, 'node_modules'),
+                loader: 'babel-loader',
                 options: {
-                    plugins: [['@babel/plugin-proposal-decorators', { legacy: true }]],
+                    presets: ['react-app'],
+                    plugins: [
+                        [
+                            'import',
+                            {
+                                libraryName: 'lodash-es',
+                                libraryDirectory: '',
+                                camel2DashComponentName: false,
+                            },
+                            'lodash',
+                        ],
+                        ['@babel/plugin-proposal-decorators', { legacy: true }],
+                    ],
                 },
             },
         ],

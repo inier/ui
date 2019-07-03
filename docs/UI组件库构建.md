@@ -383,13 +383,13 @@ export default tasks;
 然后安装babel插件来解析ES6(有些可能在你的工程里用不到)：
 
 ```
-yarn add babel-core
-yarn add babel-cli
+yarn add @babel/core
+yarn add @babel/cli
 yarn add babel-loader
-yarn add babel-plugin-external-helpers
-yarn add babel-plugin-transform-object-rest-spread
-yarn add babel-preset-env
-yarn add babel-preset-react
+yarn add @babel/plugin-external-helpers
+yarn add @babel/plugin-proposal-object-rest-spread
+yarn add @babel/preset-env
+yarn add @babel/preset-react
 ```
 
 根目录下新建`.babelrc` babel配置文件, 写入：
