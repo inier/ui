@@ -1,0 +1,31 @@
+@import '~@ozo/mixins-sass/src/_settings.scss';
+
+.icon {
+  &-xs {
+    font-size: $icon-size-xs;
+  }
+
+  &-sm {
+    //font-size: $icon-size-sm;
+  }
+
+  &-md {
+    font-size: $icon-size-md;
+  }
+
+  &-lg {
+    font-size: $icon-size-lg;
+  }
+  &-xl {
+    font-size: $icon-size-xl;
+  }
+
+  &-loading {
+    animation: ani-circle 1s linear infinite;
+  }
+  @keyframes ani-circle {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

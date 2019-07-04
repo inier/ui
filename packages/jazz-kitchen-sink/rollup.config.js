@@ -12,7 +12,10 @@ const outputTypes = [
 ];
 
 const tasks = outputTypes.map((output) => ({
-  input: './src/index.js', // 组件主入口，相对路径
+  input: {
+    index: 'src/index.js', // 组件库主入口，相对路径
+    ...cModuleMap // 各组件入口
+  },
   external,
   output,
   name: 'my-library',

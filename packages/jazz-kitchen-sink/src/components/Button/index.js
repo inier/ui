@@ -1,2 +1,2 @@
-import Button from './src';
+import Button from './Button.jsx';
 export default Button;

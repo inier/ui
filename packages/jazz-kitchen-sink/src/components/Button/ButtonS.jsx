@@ -4,7 +4,7 @@ class Button extends Component {
   render() {
     const { handleOnclick } = this.props;
 
-    return <button onClick={handleOnclick}>react button</button>;
+    return (<button onClick={handleOnclick} >react button</button>);
   }
 }
 
