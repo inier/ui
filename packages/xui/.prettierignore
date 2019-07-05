@@ -1,8 +1,0 @@
-**/*.md
-**/*.svg
-**/*.html
-package.json
-.docz
-.vscode
-/build/*
-/public/*

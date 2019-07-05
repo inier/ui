@@ -1,6 +1,6 @@
 {
-  "name": "@ozo/xui",
-  "version": "0.1.0",
+  "name": "@ozo/mo",
+  "version": "0.0.1",
   "main": "es/index/index.js",
   "module": "es/index/index.js",
   "files": [

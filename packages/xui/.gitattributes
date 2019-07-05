@@ -1,7 +1,0 @@
-*           text eol=lf
-*.txt		text
-*.jpg		-text
-*.png		-text
-*.gif		-text
-*.vcproj	text eol=crlf
-*.sh		text eol=lf
