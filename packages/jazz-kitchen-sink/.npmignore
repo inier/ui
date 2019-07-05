@@ -1,5 +1,15 @@
+build
 coverage
+config
+public
+src
+style
 scripts
 *.log
 *.config.js
 *.lock
+.babelrc
+.env
+.eslintrc.js
+.eslintignore
+jsconfig.json
