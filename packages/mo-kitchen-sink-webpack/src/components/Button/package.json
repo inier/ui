@@ -1,0 +1,16 @@
+{
+  "name": "@ozo/button",
+  "version": "1.0.0",
+  "main": "dist/es/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:com": "rollup -c ../../../../../rollup.config.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "rollup": "^1.16.4"
+  }
+}

@@ -1,0 +1,67 @@
+@import '@settings';
+.page-view {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    /* stylelint-disable no-descending-specificity */
+    .section {
+        overflow: hidden;
+        &:not(:first-child) {
+            @include whiteSpaceMargin(top);
+        }
+        @include antiWingBlankMargin;
+    }
+    .block {
+        min-height: 80px;
+        padding: 10px 0;
+        text-align: center;
+        background-color: #f5f5f5;
+        @include wingBlankMargin;
+    }
+    .section,
+    .block {
+        &.flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        &:empty {
+            display: none;
+        }
+    }
+    /* stylelint-enable no-descending-specificity */
+    span {
+        &[class*='border'] {
+            padding: 8px 16px;
+            margin: 5px;
+            font-size: 15px;
+            color: #333;
+        }
+        &[class*='triangle-'] {
+            margin-top: 5px;
+        }
+        &[class*='arrow-'] {
+            height: 20px;
+        }
+    }
+    .h2 {
+        margin: 10px 0;
+        font-size: 14px;
+        font-weight: normal;
+        color: #a2a2a2;
+        @include wingBlankMargin;
+        @include side-line(1px, .5em, #ddd);
+    }
+    .h3 {
+        width: 95%;
+        padding-left: 5px;
+        line-height: 30px;
+        color: #656306;
+        text-align: left;
+        background-color: #f3f1c4;
+        border-left: 3px solid #4a1616;
+    }
+    .btn {
+        margin: 5px;
+    }
+}

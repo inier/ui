@@ -1,0 +1,40 @@
+@import '@settings';
+.inputItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: $input-item-height-md;
+    padding-left: 15px;
+    font-size: $input-font-size;
+    color: $input-label-color;
+    label {
+        > .label {
+            display: inline-block;
+            min-width: $input-label-min-width;
+            max-width: $input-label-max-width;
+            height: $input-item-height-md;
+            padding-right: 5px;
+            line-height: $input-item-height-md;
+        }
+    }
+    input {
+        height: 100%;
+        padding: 8px 1em;
+        line-height: 24px;
+        border: 0;
+        flex: 1;
+    }
+    &.lg {
+        height: $input-item-height-lg;
+        label {
+            padding: 15px 0;
+        }
+    }
+    @include singleBlank;
+}
+
+:global {
+    .inputItemFix.border-b::after {
+        left: 15px;
+    }
+}

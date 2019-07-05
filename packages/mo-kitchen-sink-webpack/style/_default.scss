@@ -1,0 +1,6 @@
+//== 全局样式、mixins、项目变量
+@import '../src/settings';
+//== 全局样式重置、动画等
+@import './reset';
+//== 组件样式
+@import '../src/components/Button/Button.scss';

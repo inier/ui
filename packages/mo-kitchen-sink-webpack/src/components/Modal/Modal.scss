@@ -1,0 +1,120 @@
+@import '@settings';
+$modalPrefixCls: '#{$prefix}modal';
+
+.#{$modalPrefixCls} {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-modal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &-mask {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        visibility: hidden;
+        background-color: $modal-bg-color;
+        opacity: 0;
+        transition: all .5s;
+        // transform: translateZ(0);
+    }
+    &-content {
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        width: $modal-width;
+        min-width: $modal-min-width;
+        max-width: $modal-max-width;
+        min-height: $modal-min-height;
+        color: $modal-text-color;
+        flex-direction: column;
+        background-color: #fff;
+
+        &.dialog {
+            max-height: $modal-max-height;
+            margin-top: $modal-pos-offset-v;
+            border-radius: $modal-border-radius;
+        }
+        &.layer {
+            bottom: -100%;
+            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            border-top-left-radius: $modal-border-radius;
+            border-top-right-radius: $modal-border-radius;
+            transition: bottom .5s;
+        }
+    }
+    &.show {
+        .#{$modalPrefixCls}-mask {
+            visibility: visible;
+            opacity: 1;
+            transition: all .5s;
+        }
+        .#{$modalPrefixCls}-content {
+            &.layer {
+                bottom: 0;
+                transition: bottom .5s;
+            }
+        }
+    }
+    &-header,
+    &-footer {
+        height: $modal-header-height;
+        line-height: $modal-header-height;
+    }
+    &-header {
+        text-align: center;
+    }
+    &-title {
+        display: inline-block;
+        max-width: 10em;
+        @include ellipsis;
+    }
+    &-body {
+        position: relative;
+        margin: $modal-padding;
+        overflow-y: auto;
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+    &-footer {
+        padding: 6px 12px;
+        text-align: right;
+        .btnWrap {
+            align-self: flex-end;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1;
+        }
+    }
+    .layer {
+        .#{$modalPrefixCls}-closeIcon {
+            top: 1px;
+            right: 32px;
+            left: auto;
+            i {
+                color: #fff;
+                background-color: rgba(0, 0, 0, .4);
+                transform: scale(.65);
+            }
+        }
+    }
+    &-closeIcon {
+        position: absolute;
+        bottom: -16px;
+        left: 50%;
+        margin-left: -16px;
+        color: #919191;
+        i {
+            background-color: rgba(255, 255, 255, .7);
+        }
+    }
+}
