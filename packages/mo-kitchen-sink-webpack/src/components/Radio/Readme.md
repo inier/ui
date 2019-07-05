@@ -28,6 +28,7 @@ this.state = {
     selectedValue : 'React'
 }
 ```
+
 > mobx 等状态管理放到对应的 store
 
 3.  在需要引用 Radio 的页面或组件中添加选中 Radio 子项后的回调方法

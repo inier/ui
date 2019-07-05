@@ -4,25 +4,25 @@
 
 ## 效果预览
 
-- [点此预览](./dist/)
+-   [点此预览](./dist/)
 
 ## 如何使用
 
-Modal组件提供三个方法，分别为：
+Modal 组件提供三个方法，分别为：
 
-- alert（提示对话框）
-- confirm（确认对话框）
-- prompt（输入对话框）
+-   alert（提示对话框）
+-   confirm（确认对话框）
+-   prompt（输入对话框）
 
 这三个方法统一接收一个对象，对象可选属性有：
 
-- contentText： 对话框提内容文本
-- onOk：点击确认按钮时执行的回调函数。如果调用方法为 prompt，那么组件会将用户输入的内容作为此回调函数的参数传入。
-- onCancel：点击取消按钮时执行的回调函数。注意：alert 方法不接受 onCancel 函数作为参数。
+-   contentText： 对话框提内容文本
+-   onOk：点击确认按钮时执行的回调函数。如果调用方法为 prompt，那么组件会将用户输入的内容作为此回调函数的参数传入。
+-   onCancel：点击取消按钮时执行的回调函数。注意：alert 方法不接受 onCancel 函数作为参数。
 
 ### 示例
 
-``` js
+```js
 import Modal from '../components/Modal'
 
 ...
@@ -46,7 +46,7 @@ prompt({
 
 ## 组件依赖
 
-``` json
+```json
 {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
